@@ -8,9 +8,24 @@
  * This function displays "Hello, World!".
  * @constructor
  */
-function doMathClicked() {
-  document.getElementById("multiply-math").innerHTML =
-    "<p>The Area Is =  " + 5 * 3 + "</p>"
-  document.getElementById("add-math").innerHTML =
-    "<p>The Perimeter Is = " + 2 * (5 + 3) + "</p>"
+'use strict'
+
+/**
+ * This function calculates area and perimeter of rectangle.
+ */
+function calculate() {
+  const TAX_RATE = 0.18
+  
+  // input
+  const number = parseInt(document.getElementById('number-of-hours').value)
+  const rate = parseInt(document.getElementById('hourly-rate').value)
+
+  // process
+  const pay = number * rate
+  const taxesToPay = pay * TAX_RATE
+  const takeHomePay = pay - taxesToPay
+
+  // output  
+  document.getElementById('number').innerHTML = 'your pay will be: ' + ' $ ' + pay
+  document.getElementById('rate').innerHTML = 'the goverment will take: ' + ' $ ' + takeHomePay
 }
