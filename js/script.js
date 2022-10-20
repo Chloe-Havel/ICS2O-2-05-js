@@ -17,15 +17,15 @@ function calculate() {
   const TAX_RATE = 0.18
   
   // input
-  const number = parseInt(document.getElementById('number-of-hours').value)
-  const rate = parseInt(document.getElementById('hourly-rate').value)
+  const numberOfHoursWorked = parseInt(document.getElementById('number-of-hours').value)
+  const hourlyRate = parseInt(document.getElementById('hourly-rate').value)
 
   // process
-  const pay = number * rate
+  const pay = numberOfHoursWorked * hourlyRate
   const taxesToPay = pay * TAX_RATE
   const takeHomePay = pay - taxesToPay
 
   // output  
-  document.getElementById('number').innerHTML = 'your pay will be: ' + ' $ ' + pay
-  document.getElementById('rate').innerHTML = 'the goverment will take: ' + ' $ ' + takeHomePay
+  document.getElementById('number').innerHTML = 'your pay will be: ' + ' $ ' + takeHomePay
+  document.getElementById('rate').innerHTML = 'the goverment will take: ' + ' $ ' + taxesToPay
 }
