@@ -11,25 +11,17 @@
 "use strict"
 
 /**
- * This function calculates area and perimeter of rectangle.
+ * Check servie worker.
  */
-function calculate() {
-  const TAX_RATE = 0.18
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
+    scope: "/ICS2O-PWA-Test/",
+  })
+}
 
-  // input
-  const numberOfHoursWorked = parseInt(
-    document.getElementById("number-of-hours").value
-  )
-  const hourlyRate = parseInt(document.getElementById("hourly-rate").value)
-
-  // process
-  const pay = numberOfHoursWorked * hourlyRate
-  const taxesToPay = pay * TAX_RATE
-  const takeHomePay = pay - taxesToPay
-
-  // output
-  document.getElementById("number").innerHTML =
-    "your pay will be: " + " $ " + takeHomePay
-  document.getElementById("rate").innerHTML =
-    "the goverment will take: " + " $ " + taxesToPay
+/**
+ * This function displays an alert.
+ */
+function myButtonClicked() {
+  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
 }
